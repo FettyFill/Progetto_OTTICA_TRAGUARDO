@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        font-family: 'Anonymous Pro', monospace;
+        background-image: url(sfondo_medio.jpg); /* Impostazione dello sfondo per schermi enormi */
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button, input {
+    font-family: 'Anonymous Pro', monospace;
+}
+
+/* Aggiungi questa regola al tuo CSS */
+.registration-container,
+button,
+.social-login a,
+.social-login a i,
+.logo img,
+.apple-icon i {
+    user-select: none;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"] {
+    user-select: text;
+}
+
+    .registration-container {
+        background-color: rgba(255, 255, 255, 0.8); /* Aggiunge uno sfondo traslucido */
+        border-radius: 20px; /* Rende i bordi più tondeggianti */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 350px; /* Rimpicciolito il container */
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(5px); /* Aggiunge uno sfocatura */
+		opacity: 0; /* Inizialmente invisibile */
+        transform: translateY(-50px); /* Parte nascosto in alto */
+        transition: opacity 0.5s, transform 0.5s;
+    }
+	
+	.registration-container.visible {
+        opacity: 1; /* Renderlo visibile */
+        transform: translateY(0); /* Sposta verso il basso */
+    }
+
+    .registration-container h2 {
+        margin-bottom: 20px;
+        color: #333;
+        font-size: 20px; /* Rimpicciolito il titolo */
+        user-select: none; /* Impedisce la selezione del testo */
+        pointer-events: none; /* Impedisce eventi di puntatore sul titolo */
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .form-group input {
+    width: calc(100% - 48px);
+    padding: 12px; /* Ridotto l'altezza del padding */
+    padding-left: 40px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background-color: transparent;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-bottom-color 0.3s, filter 0.3s, color 0.3s;
+    border-radius: 20px;
+    position: relative;
+}
+
+
+    .form-group input:not(:focus) {
+        color: #888; /* Colore del testo più chiaro */
+    }
+
+    .form-group input:focus + .placeholder-label {
+    top: 2px; /* Sposta l'etichetta quando la casella di testo ha il focus */
+    font-size: 14px; /* Riduce la dimensione del testo dell'etichetta quando la casella di testo ha il focus */
+}   
+
+    .form-group input:focus {
+        border-bottom-color: #637E97; /* Cambia il colore del bordo quando selezionata */
+        color: #333; /* Ripristina il colore del testo quando selezionata */
+    }
+
+    .form-group input:not(:placeholder-shown) + .placeholder-label {
+    top:0px; /* Sposta l'etichetta quando la casella di testo ha del testo */
+    font-size: 12px; /* Riduce la dimensione del testo dell'etichetta quando la casella di testo ha del testo */
+}
+
+    .placeholder-label {
+    position: absolute;
+    top: 50%;
+    left: 35px; /* Aumentato il valore per centrare il placeholder */
+    font-size: 14px;
+    color: #888;
+    pointer-events: none;
+    transition: top 0.3s, font-size 0.3s, color 0.3s;
+    transform: translateY(-50%);
+}
+
+    .form-group button {
+        width: calc(100% - 20px); /* Rimpicciolita la larghezza del pulsante */
+        padding: 10px;
+        border: none;
+        border-radius: 20px; /* Rende i bordi più tondeggianti */
+        background-color: #637E97;
+        font-size: 14px; /* Rimpicciolito il font-size */
+        color: #ffffff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        outline: none;
+    }
+
+    .form-group button:hover {
+        background-color: #637E97;
+    }
+
+    .form-group p {
+        margin-top: 10px;
+        color: #777;
+        font-size: 12px; /* Rimpicciolito il font-size */
+    }
+
+    .social-login {
+        margin-top: 15px; /* Ridotto il margine superiore */
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-login a {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin: 0 10px;
+        border-radius: 50%;
+        background-color: #637E97;
+        line-height: 30px;
+        color: #ffffff;
+        transition: background-color 0.3s;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    .social-login a:hover {
+        background-color: #637E97;
+    }
+
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Media Query per schermi piccoli */
+    @media only screen and (max-width: 600px) {
+        body {
+            background-image: url(sfondo_piccolo.jpg); /* Impostazione dello sfondo per schermi piccoli */
+        }
+        .registration-container {
+            width: 300px; /* Rimpicciolita leggermente la larghezza del container */
+        }
+    }
+
+    /* Media Query per schermi enormi */
+    @media only screen and (min-width: 1200px) {
+        .registration-container {
+            width: 600px;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="registration-container" id="registrationContainer">
+    <h2 style="color: #637E97;">Login</h2>
+    <form action="#">
+        <div class="form-group">
+            <input type="text" placeholder="" required>
+            <label class="placeholder-label">Nome</label>
+        </div>
+        <div class="form-group">
+            <input type="password" placeholder="" required>
+            <label class="placeholder-label">Password</label>
+        </div>
+        <div class="form-group">
+            <button type="submit"><a style="text-decoration: none; color: inherit;" href="Index.html">Accedi</a></button>
+        </div>
+        <div class="form-group">
+            <p>Non hai un account? <a href="Registrazione.html">Registrati</a></p>
+        </div>
+    </form>
+    <div class="social-login">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-google"></i></a>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var container = document.getElementById("registrationContainer");
+        container.classList.add("visible");
+    });
+</script>
+
+</body>
+</html>
