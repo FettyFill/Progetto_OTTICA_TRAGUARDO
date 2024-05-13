@@ -77,6 +77,24 @@
         transform: scaleX(1);
     }
 
+    #PulsanteLogin{
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            color: #445566;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: 10px;
+    
+        
+    }
+
+    #PulsanteLogin:hover {
+        background-color: #637E97;
+        color: #fff;
+    }
+
     .submenu {
         display: none;
         position: absolute;
@@ -258,6 +276,52 @@
             opacity: 1;
         }
     }
+
+/* Aggiornamento dello stile per la sezione "Nuovi Brand" */
+.brand-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Spazio uniforme tra le immagini */
+    margin-top: 40px;
+}
+
+.brand {
+    width: calc(50% - 10px); /* Larghezza delle immagini con uno spazio di 20px tra di esse */
+    margin-bottom: 20px; /* Spazio tra le righe */
+    position: relative;
+    overflow: hidden; /* Per garantire che il nome del brand sia nascosto all'interno del contenitore */
+}
+
+.brand-img {
+    width: 100%; /* Immagini occupano l'intera larghezza del loro contenitore */
+    height: 100%; /* Immagini occupano l'intera altezza del loro contenitore */
+    object-fit: cover; /* Adatta l'immagine per coprire uniformemente il contenitore */
+    transition: transform 0.3s;
+}
+
+.brand:hover .brand-img {
+    transform: scale(1.05); /* Leggero ingrandimento al passaggio del mouse */
+}
+
+.brand-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(99, 126, 151, 0.7); /* Sfondo del nome del brand */
+    color: #fff; /* Colore del testo del nome del brand */
+    font-weight: bold;
+    font-size: 24px; /* Dimensione del testo del nome del brand */
+    opacity: 0; /* Renderizzazione iniziale del nome del brand nascosto */
+    transition: opacity 0.3s; /* Transizione per la visualizzazione del nome del brand */
+}
+
+.brand:hover .brand-name {
+    opacity: 1; /* Mostra il nome del brand al passaggio del mouse sull'immagine */
+}
+
 
     /* Footer Styles */
     footer {
