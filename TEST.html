@@ -16,16 +16,25 @@
 </head>
 
 
+
 <body>
 
 <header>
     <div class="container">
+
+        
+
         <div class="logo">
             <img src="LOGO.png" alt="Logo">
-            <div>OTTICA TRAGUARDO Shop</div>
+            <div class="TitoloPagina">OTTICA TRAGUARDO Shop</div>
         </div>
-        <nav class="menu">
-            <ul>
+
+        <!-- Pulsante per aprire il menu a tendina -->
+        <div class="navbar"><span class="icon-bar"></span></div>
+
+        <nav class="menu" id="sidebar">
+
+            <ul class="menu-list">
                 <li><a href="Index.html">Home</a></li>
                 <li>
                     <a href="#">Products</a>
@@ -45,6 +54,8 @@
             </ul>
         </nav>
     </div>
+
+    
 </header>
 
 <div class="Content">
@@ -77,10 +88,6 @@
     <div class="brand">
         <img src="Img/D&G.jpg" alt="Brand 2" class="brand-img">
         <p class="brand-name">D&G</p>
-    </div>
-    <div class="brand">
-        <img src="Img/Prada.jpg" alt="Brand 3" class="brand-img">
-        <p class="brand-name">Prada</p>
     </div>
     <div class="brand">
         <img src="Img/RODENSTOCK.jpg" alt="Brand 4" class="brand-img">
@@ -125,7 +132,22 @@
 </footer>
 
 <script>
+
     $(document).ready(function() {
+
+$('.navbar').click(function(){
+    $('.menu').toggleClass('wide');
+});
+
+
+        window.addEventListener('resize', resizeBrands);
+
+
+
+// Chiamata alla funzione all'avvio per impostare l'altezza iniziale
+resizeBrands();
+
+
         // Funzione per avviare il carousel
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
@@ -169,12 +191,52 @@
         // Aggiungi un evento di scorrimento per l'header
         $(window).scroll(function() {
             if ($(this).scrollTop() > 1) {
-                $('header').css('background-color', 'rgba(99, 126, 151, 0.95)');
+                    $('header').css('background-color', 'rgba(99, 126, 151, 0.95)');
+            
             } else {
                 $('header').css('background-color', 'rgba(99, 126, 151, 1)');
             }
         });
+
+        // Aggiungi un evento di hover per l'header
+    $('header').hover(function() {
+        // Quando il mouse entra nell'header
+        $(this).css('background-color', 'rgba(99, 126, 151, 1)');
+    }, function() {
+        // Quando il mouse esce dall'header
+        if ($(window).scrollTop() > 1) {
+            $(this).css('background-color', 'rgba(99, 126, 151, 0.95)');
+        }
     });
+
+    
+
+    });
+
+
+    // Funzione per impostare l'altezza degli elementi .brand in modo che siano quadrati
+    function resizeBrands() {
+    var brands = document.querySelectorAll('.brand');
+    brands.forEach(function(brand) {
+        var width = brand.offsetWidth;
+        brand.style.height = width + 'px';
+    });
+
+    // Gestione del toggle per il menu mobile
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuList = document.querySelector('.menu-list');
+
+        // Aggiungi un evento di click al pulsante del menu
+        menuToggle.addEventListener('click', function() {
+            menuList.classList.toggle('active');
+        });
+    });
+
+}
+
+
+
 </script>  
 
 </body>

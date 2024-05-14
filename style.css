@@ -19,6 +19,10 @@
         transition: background-color 0.5s ease; /* Aggiungi transizione per lo sfumato */
     }
 
+    header:hover {
+        background-color: rgba(99, 126, 151, 1);
+    }
+
     .logo {
         font-size: 24px;
         font-weight: bold;
@@ -28,7 +32,7 @@
 
     .logo img {
         margin-right: 10px;
-        width: 100px;
+        width: 70px;
         height: auto;
     }
 
@@ -149,7 +153,9 @@
     .containerBody {
         max-width: 100%;
         margin: 0 auto;
-        padding: 20px;
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-bottom: 20px;
     }
 
     .login-button {
@@ -172,6 +178,7 @@
     .section-title {
         font-size: 24px;
         font-weight: bold;
+        color: #445566;
         margin-bottom: 20px;
     }
 
@@ -286,10 +293,10 @@
 }
 
 .brand {
-    width: calc(50% - 10px); /* Larghezza delle immagini con uno spazio di 20px tra di esse */
+    width: calc(32% - 10px); /* Larghezza delle immagini con uno spazio di 20px tra di esse */
+    height: calc(32% - 10px);
     margin-bottom: 20px; /* Spazio tra le righe */
     position: relative;
-    overflow: hidden; /* Per garantire che il nome del brand sia nascosto all'interno del contenitore */
 }
 
 .brand-img {
@@ -310,17 +317,15 @@
     transform: translate(-50%, -50%);
     margin: 0;
     padding: 10px;
-    background-color: rgba(99, 126, 151, 0.7); /* Sfondo del nome del brand */
+    background-color: rgba(68, 85, 102, 0.7); /* Sfondo del nome del brand */
     color: #fff; /* Colore del testo del nome del brand */
     font-weight: bold;
     font-size: 24px; /* Dimensione del testo del nome del brand */
     opacity: 0; /* Renderizzazione iniziale del nome del brand nascosto */
-    transition: opacity 0.3s; /* Transizione per la visualizzazione del nome del brand */
+    /*transition: opacity 0.3s; /* Transizione per la visualizzazione del nome del brand */
+    opacity: 1;
 }
 
-.brand:hover .brand-name {
-    opacity: 1; /* Mostra il nome del brand al passaggio del mouse sull'immagine */
-}
 
 
     /* Footer Styles */
@@ -395,21 +400,29 @@
         transform: translateY(-5px);
     }
 
-    @media screen and (max-width: 768px) {
+.menu-toggle{
+    display: none;
+}
+
+    @media screen and (max-width: 940px) {
         header {
             padding: 10px 20px;
         }
 
-        .menu {
-            float: none;
-            text-align: center;
-            margin-top: 10px;
+        .logo{
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
         }
 
-        .menu ul li {
-            display: block;
-            margin-right: 0;
-            margin-bottom: 10px;
+        .logo img {
+            width: 60px !important;; 
+            height: auto;
+            margin-right: 35px;
+        }
+
+        .TitoloPagina{
+            display: none;
         }
 
         .submenu {
@@ -420,9 +433,7 @@
         .container {
             padding: 10px;
         }
-    }
-
-    @media screen and (max-width: 768px) {
+    
         footer .container {
             flex-direction: column;
         }
@@ -436,4 +447,45 @@
         footer .contact-info {
             margin-bottom: 20px;
         }
+
+
+        /* Aggiungi questo stile per il navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Per indicare che è cliccabile */
+}
+
+.icon-bar {
+    width: 30px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: background-color 0.3s; /* Aggiungi una transizione */
+}
+
+/* Cambia il colore dell'icona quando ci passi sopra con il mouse */
+.icon-bar:hover {
+    background-color: #ccc;
+}
+
+/* Nascondi il menu principale per impostazione predefinita */
+.menu {
+    display: none;
+}
     }
+    
+    .navbar {
+        display: none;
+    }
+
+    
+    
+    
+    
+    .menu-list {
+        display: block;
+    }
+    
+    
+    
