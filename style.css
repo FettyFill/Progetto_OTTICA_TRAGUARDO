@@ -1,3 +1,6 @@
+* {
+    user-select: none;
+}
 
     body {
         font-family: 'Anonymous Pro', monospace;
@@ -5,6 +8,7 @@
         margin: 0;
         padding: 0;
         color: #637E97; /* Colore principale */
+        overflow-x: hidden;
     }
 
     /* Header Styles */
@@ -284,47 +288,47 @@
         }
     }
 
-/* Aggiornamento dello stile per la sezione "Nuovi Brand" */
-.brand-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Spazio uniforme tra le immagini */
-    margin-top: 40px;
-}
+    /* Aggiornamento dello stile per la sezione "Nuovi Brand" */
+    .brand-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* Spazio uniforme tra le immagini */
+        margin-top: 40px;
+    }
 
-.brand {
-    width: calc(32% - 10px); /* Larghezza delle immagini con uno spazio di 20px tra di esse */
-    height: calc(32% - 10px);
-    margin-bottom: 20px; /* Spazio tra le righe */
-    position: relative;
-}
+    .brand {
+        width: calc(32% - 10px); /* Larghezza delle immagini con uno spazio di 20px tra di esse */
+        height: calc(32% - 10px);
+        margin-bottom: 20px; /* Spazio tra le righe */
+        position: relative;
+    }
 
-.brand-img {
-    width: 100%; /* Immagini occupano l'intera larghezza del loro contenitore */
-    height: 100%; /* Immagini occupano l'intera altezza del loro contenitore */
-    object-fit: cover; /* Adatta l'immagine per coprire uniformemente il contenitore */
-    transition: transform 0.3s;
-}
+    .brand-img {
+        width: 100%; /* Immagini occupano l'intera larghezza del loro contenitore */
+        height: 100%; /* Immagini occupano l'intera altezza del loro contenitore */
+        object-fit: cover; /* Adatta l'immagine per coprire uniformemente il contenitore */
+        transition: transform 0.3s;
+    }
 
-.brand:hover .brand-img {
-    transform: scale(1.05); /* Leggero ingrandimento al passaggio del mouse */
-}
+    .brand:hover .brand-img {
+        transform: scale(1.05); /* Leggero ingrandimento al passaggio del mouse */
+    }
 
-.brand-name {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    padding: 10px;
-    background-color: rgba(68, 85, 102, 0.7); /* Sfondo del nome del brand */
-    color: #fff; /* Colore del testo del nome del brand */
-    font-weight: bold;
-    font-size: 24px; /* Dimensione del testo del nome del brand */
-    opacity: 0; /* Renderizzazione iniziale del nome del brand nascosto */
-    /*transition: opacity 0.3s; /* Transizione per la visualizzazione del nome del brand */
-    opacity: 1;
-}
+    .brand-name {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        padding: 10px;
+        background-color: rgba(68, 85, 102, 0.7); /* Sfondo del nome del brand */
+        color: #fff; /* Colore del testo del nome del brand */
+        font-weight: bold;
+        font-size: 24px; /* Dimensione del testo del nome del brand */
+        opacity: 0; /* Renderizzazione iniziale del nome del brand nascosto */
+        /*transition: opacity 0.3s; /* Transizione per la visualizzazione del nome del brand */
+        opacity: 1;
+    }
 
 
 
@@ -400,92 +404,184 @@
         transform: translateY(-5px);
     }
 
-.menu-toggle{
+    .menu-toggle{
     display: none;
-}
-
-    @media screen and (max-width: 940px) {
-        header {
-            padding: 10px 20px;
-        }
-
-        .logo{
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            width: 60px !important;; 
-            height: auto;
-            margin-right: 35px;
-        }
-
-        .TitoloPagina{
-            display: none;
-        }
-
-        .submenu {
-            width: 100%;
-            left: auto;
-        }
-
-        .container {
-            padding: 10px;
-        }
-    
-        footer .container {
-            flex-direction: column;
-        }
-
-        footer .contact-info,
-        footer .map {
-            width: 100%;
-            max-width: calc(100% - 40px);
-        }
-
-        footer .contact-info {
-            margin-bottom: 20px;
-        }
-
-
-        /* Aggiungi questo stile per il navbar */
-.navbar {
-    display: flex;
-    align-items: center;
-    cursor: pointer; /* Per indicare che è cliccabile */
-}
-
-.icon-bar {
-    width: 30px;
-    height: 5px;
-    background-color: #fff;
-    margin: 6px 0;
-    transition: background-color 0.3s; /* Aggiungi una transizione */
-}
-
-/* Cambia il colore dell'icona quando ci passi sopra con il mouse */
-.icon-bar:hover {
-    background-color: #ccc;
-}
-
-/* Nascondi il menu principale per impostazione predefinita */
-.menu {
-    display: none;
-}
-    }
-    
-    .navbar {
-        display: none;
     }
 
-    
-    
-    
-    
-    .menu-list {
-        display: block;
+
+
+    .toggle-menu{
+        display:  none;
     }
+
+    #PulsanteLogin{
+        width: auto;
+    }
+
+        @media screen and (max-width: 940px) {
+
+            body {
+                font-size: 0.875em; /* Riduce la dimensione del testo del 87.5% rispetto al testo di base */
+            }
+
+            .Content{
+                font-size: 0.875em;
+            }
+
+            a{
+                font-size: 0.875em;
+            }
+        
+            header {
+                padding: 10px 20px;
+                box-sizing: border-box;
+                font-size: 0.875em;
+            }
+
+            footer{
+                font-size: 0.9em;
+            }
+
+            .logo{
+                margin: 0 auto;
+                display: none;
+                align-items: center;
+            }
+
+            .logo img {
+                width: 60px !important;
+                height: auto;
+                margin-right: 35px;
+            }
+
+            .TitoloPagina{
+                display: none;
+            }
+
+            .submenu {
+                width: 100%;
+                left: auto;
+            }
+
+            .container {
+                padding: 10px;
+                font-size: 0.875em;
+            }
+
+            .map{
+                font-size: 0.875em;
+            }
     
+            .brand-name{
+                font-size: 0.875em;
+            }
+
+            .section-title{
+                font-size: 0.875em;
+            }
+
+
+            /* Aggiornamento dello stile per la sezione "Nuovi Brand" */
+            .brand-section {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between; /* Spazio uniforme tra le immagini */
+                margin-top: 40px;
+            }
+
+            .brand {
+                width: calc(100% - 10px); /* Larghezza delle immagini con uno spazio di 20px tra di esse */
+                height: calc(80% - 10px);
+                position: relative;
+                margin: 0 auto;
+                margin-bottom: 20px; /* Spazio tra le righe */
+            }
+
+    .brand-img {
+        width: 100%; /* Immagini occupano l'intera larghezza del loro contenitore */
+        height: 100%; /* Immagini occupano l'intera altezza del loro contenitore */
+        object-fit: cover; /* Adatta l'immagine per coprire uniformemente il contenitore */
+        transition: transform 0.3s;
+    }
+
+            footer .container {
+                flex-direction: column;
+            }
+
+            footer .contact-info,
+            footer .map {
+                width: 100%;
+                max-width: calc(100% - 50px);
+            }
+
+            footer .contact-info {
+                margin-bottom: 20px;
+            }
+
+
+            /* Aggiungi questo stile per il navbar */
+            .navbar {
+                display: flex;
+                align-items: center;
+                cursor: pointer; /* Per indicare che è cliccabile */
+            }
+
+            .icon-bar {
+                width: 30px;
+                height: 5px;
+                background-color: #fff;
+                margin: 6px 0;
+                transition: background-color 0.3s; /* Aggiungi una transizione */
+            }
+
+            /* Cambia il colore dell'icona quando ci passi sopra con il mouse */
+            .icon-bar:hover {
+                background-color: #ccc;
+            }
+
+            .menu {
+
+                font-size: 0.875em;
+
+                width: 90%;
     
+                height: 100% !important; /* Imposta la larghezza del menu */
+            }
+
+            .menu ul {
+                list-style-type: none; /* Rimuove i punti elenco */
+                padding: 0; /* Rimuove lo spazio interno */
+                margin: 0; /* Rimuove lo spazio esterno */
+                width: 100%;
+    
+            }
+    
+            .menu li {
+                border-bottom: 1px solid #ccc; /* Aggiunge una linea divisoria tra gli elementi */
+                width: 100%;
+            }
+
+
+            .menu a {
+                display: block; /* Trasforma gli elementi in blocchi per occupare tutto lo spazio disponibile */
+                padding: 10px; /* Aggiunge spazio intorno al testo */
+                text-decoration: none; /* Rimuove la sottolineatura */
+            }
+  
+
+            .menu li:last-child {
+                border-bottom: none; /* Rimuove la linea divisoria per l'ultimo elemento */
+            }
+
+            .navbar {
+                display: none;
+            }   
+
+
+            .menu menu-active{
+                width: 100%;
+            }
+
+        }
+
     
