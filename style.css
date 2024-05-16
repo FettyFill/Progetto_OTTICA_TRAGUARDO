@@ -1,9 +1,9 @@
 * {
     user-select: none;
+    font-family: 'Anonymous Pro', monospace;
 }
 
     body {
-        font-family: 'Anonymous Pro', monospace;
         background-color: #f8f9fa;
         margin: 0;
         padding: 0;
@@ -418,6 +418,29 @@
         width: auto;
     }
 
+    .Logo-FormContatti{
+        width: 100%;
+    }
+
+    .Img-FormContatti{
+        width: 100px;
+        padding: 10px;
+    }
+
+    .InputNewsletter{
+        all: unset;
+        float: left;
+    }
+
+    .ButtonNewsletter{
+        all: unset;
+        float: right;
+    }
+
+    .FormNewsletter{
+        padding-bottom: 10px;
+    }
+
         @media screen and (max-width: 940px) {
 
             body {
@@ -511,6 +534,11 @@
             footer .map {
                 width: 100%;
                 max-width: calc(100% - 50px);
+            }
+
+            footer .contact-info:hover,
+            footer .map:hover {
+                transform: translateY(-5px);
             }
 
             footer .contact-info {

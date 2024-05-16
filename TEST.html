@@ -9,7 +9,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
-<link rel="icon" href="LOGO.ico" type="image/x-icon">
+<link rel="icon" href="LOGO-removebg.ico" type="image/x-icon">
 <link rel="shortcut icon" href="LOGO.ico" type="image/x-icon">
 <link rel="stylesheet" href="style.css">
 
@@ -26,7 +26,7 @@
         <div class="container">
 
             <div class="logo">
-                <img src="LOGO.png" alt="Logo">
+                <img src="LOGO-removebg-preview.png" alt="Logo">
                 <div class="TitoloPagina">OTTICA TRAGUARDO Shop</div>
             </div>
 
@@ -107,12 +107,21 @@
     <!-- FOOTER - Con mappa e form di contatti -->
     <footer>
         <div class="container" style="padding-bottom: 20px;">
-
+            
             <div class="contact-info" style="height: 100%;">
-                <h3>Contatti</h3>
-                <p>Indirizzo: Piazza XX Settembre, 18 - 10242 Bra(CN)</p>
-                <p>Email: info@OtticaTraguardo.com</p>
-                <p>Telefono: +39 0172 202882</p>
+                <div class="Logo-FormContatti">
+                    <img src="LOGO-removebg-preview.png" class="Img-FormContatti" >
+                </div>
+
+                <h2>Restiamo in contatto</h2>
+                <p>Iscriviti alla nostra newsletter per ricevere offerte e novità!</p>
+                
+                <div class="FormNewsletter">
+                    <input class="InputNewsletter" placeholder="tua-email@esempio.com">
+                    <button class="ButtonNewsletter"> -> </button>
+                </div>
+                <hr>
+                
                 <a href="mailto:info@OtticaTraguardo.com" class="contact-button">Contattaci</a>
             </div>
 
@@ -184,7 +193,7 @@
 
         // Aggiungi un evento di scorrimento per l'header
         $(window).scroll(function() {
-            if ($(this).scrollTop() > 1) {
+            if ($(this).scrollTop() > 80) {
                     $('header').css('background-color', 'rgba(99, 126, 151, 0.95)');
             
             } else {
