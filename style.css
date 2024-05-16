@@ -444,14 +444,13 @@
 
             .logo{
                 margin: 0 auto;
-                display: none;
                 align-items: center;
             }
 
             .logo img {
                 width: 60px !important;
                 height: auto;
-                margin-right: 35px;
+                margin-left: 20px;
             }
 
             .TitoloPagina{
@@ -497,12 +496,12 @@
                 margin-bottom: 20px; /* Spazio tra le righe */
             }
 
-    .brand-img {
-        width: 100%; /* Immagini occupano l'intera larghezza del loro contenitore */
-        height: 100%; /* Immagini occupano l'intera altezza del loro contenitore */
-        object-fit: cover; /* Adatta l'immagine per coprire uniformemente il contenitore */
-        transition: transform 0.3s;
-    }
+            .brand-img {
+                width: 100%; /* Immagini occupano l'intera larghezza del loro contenitore */
+                height: 100%; /* Immagini occupano l'intera altezza del loro contenitore */
+                object-fit: cover; /* Adatta l'immagine per coprire uniformemente il contenitore */
+                transition: transform 0.3s;
+            }
 
             footer .container {
                 flex-direction: column;
@@ -540,6 +539,8 @@
             }
 
             .menu {
+                
+                display: none;
 
                 font-size: 0.875em;
 
