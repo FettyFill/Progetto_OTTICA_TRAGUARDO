@@ -180,8 +180,12 @@
     }
 
     .section-title {
-        font-size: 24px;
-        font-weight: bold;
+
+        font-weight: bolder;
+         /*font-size: 28pt;*/
+          text-align: center;
+           margin-top: 40px;
+        font-size: 26px;
         color: #445566;
         margin-bottom: 20px;
     }
@@ -324,7 +328,7 @@
         background-color: rgba(68, 85, 102, 0.7); /* Sfondo del nome del brand */
         color: #fff; /* Colore del testo del nome del brand */
         font-weight: bold;
-        font-size: 24px; /* Dimensione del testo del nome del brand */
+        font-size: 20px; /* Dimensione del testo del nome del brand */
         opacity: 0; /* Renderizzazione iniziale del nome del brand nascosto */
         /*transition: opacity 0.3s; /* Transizione per la visualizzazione del nome del brand */
         opacity: 1;
@@ -362,6 +366,7 @@
         transition: transform 0.3s ease-out;
         color: inherit;
         text-decoration: none;
+        height: 100% !important;
     }
 
     footer .map iframe {
@@ -430,6 +435,7 @@
     .InputNewsletter{
         all: unset;
         float: left;
+        width: 80%;
     }
 
     .ButtonNewsletter{
@@ -437,8 +443,65 @@
         float: right;
     }
 
+    #ArrowNewsletter{
+        padding: 0.4%;
+        border-radius: 5px;
+        transition: background-color 1s;
+        transition: color 1s;
+    }
+
+    #ArrowNewsletter:hover{
+        color: #445566;;
+        background-color: white;
+    }
+
     .FormNewsletter{
         padding-bottom: 10px;
+    }
+
+    .CheckBoxInput {
+        display: flex;
+        align-items: center; /* Centra verticalmente i contenuti */
+    }
+    .DivCheckBox {
+        margin-right: 10px; /* Spazio tra il checkbox e il testo, opzionale */
+    }
+    .CheckBoxInput div {
+        display: flex;
+        flex-direction: column; /* Mantiene i paragrafi uno sotto l'altro */
+    }
+
+    .CheckBoxInput div p {
+        margin: 0; /* Rimuove il margine dei paragrafi */
+        line-height: 0.5; /* Riduce lo spazio tra le righe di testo */
+        font-size: x-small;
+    }
+
+    .linea {
+        width: 50px; /* Lunghezza desiderata */
+        height: 5px; /* Spessore della linea */
+        background-color: lightgray; /* Colore della linea */
+        margin: 0 auto; /* Per centrare la linea orizzontale */
+    }
+
+    .VisualizzaOcchiali{
+        position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.5s, bottom 0.5s;
+    }
+
+    .brand:hover .VisualizzaOcchiali {
+        opacity: 1;
+        bottom: 10px;
+    }
+
+    .brand:hover .brand-img {
+        filter: brightness(0.8); /* Opacizza leggermente l'immagine al passaggio del mouse */
     }
 
         @media screen and (max-width: 940px) {
@@ -512,8 +575,8 @@
             }
 
             .brand {
-                width: calc(100% - 10px); /* Larghezza delle immagini con uno spazio di 20px tra di esse */
-                height: calc(80% - 10px);
+                width: calc(100% - 50px); /* Larghezza delle immagini con uno spazio di 20px tra di esse */
+                height: calc(60% - 50px);
                 position: relative;
                 margin: 0 auto;
                 margin-bottom: 20px; /* Spazio tra le righe */

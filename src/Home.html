@@ -1,135 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menu Responsive</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-    }
-
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        background-color: #333;
-        color: #fff;
-    }
-
-    .logo img {
-        height: 40px;
-        vertical-align: middle;
-    }
-
-    .menu {
-        display: flex;
-        align-items: center;
-    }
-
-    .menu-toggle {
-        display: none;
-        cursor: pointer;
-        color: #fff;
-    }
-
-    .menu-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-    }
-
-    .menu-list li {
-        margin-left: 20px;
-    }
-
-    .menu-list li a {
-        color: #fff;
-        text-decoration: none;
-    }
-
-    @media screen and (max-width: 768px) {
-        .container {
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 20px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizza Collezione con Transizione</title>
+    <style>
+        .containerBody {
+            position: relative;
         }
 
-        .menu {
-            display: none;
-            flex-direction: column;
-            width: 100%;
-            background-color: #111;
-            padding: 10px 0;
+        .brand-img {
+            width: 200px;
+            height: auto;
+            transition: filter 0.5s;
         }
 
-        .menu.active {
-            display: flex;
+        .brand-name {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.5s, bottom 0.5s;
         }
 
-        .menu-toggle {
-            display: block;
+        .brand:hover .brand-name {
+            opacity: 1;
+            bottom: 10px;
         }
 
-        .menu-toggle i {
-            font-size: 24px;
+        .brand:hover .brand-img {
+            filter: brightness(0.8); /* Opacizza leggermente l'immagine al passaggio del mouse */
         }
-
-        .menu-list {
-            flex-direction: column;
-            margin-top: 20px;
-        }
-
-        .menu-list li {
-            margin: 10px 0;
-        }
-    }
-</style>
+    </style>
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <div class="logo">
-            <img src="LOGO.png" alt="Logo">
-            <div class="TitoloPagina">OTTICA TRAGUARDO Shop</div>
+<div class="containerBody">
+    <div class="section-title" style="font-weight: bolder; font-size: 23pt; text-align: center; margin-top: 40px;">Nuovi Brand</div>
+    <div class="brand-section">
+        <div class="brand">
+            <img src="Img/Brand/Gucci.jpg" alt="Brand 1" class="brand-img">
+            <p class="brand-name">Gucci</p>
         </div>
-
-        <nav class="menu">
-            <ul class="menu-list">
-                <li><a href="Index.html">Home</a></li>
-                <li>
-                    <a href="#">Products</a>
-                    <div class="submenu">
-                        <ul>
-                            <li><a href="#">Eyeglasses</a></li>
-                            <li><a href="#">Sunglasses</a></li>
-                            <li><a href="#">Contact Lenses</a></li>
-                            <li><a href="#">Reading Glasses</a></li>
-                            <li><a href="#">Sports Glasses</a></li>
-                            <li><a href="#">Specialty Glasses</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="Login.html"><i class="fas fa-glasses"></i></a></li>
-            </ul>
-        </nav>
-
-        <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+        <div class="brand">
+            <img src="Img/Brand/D&G.jpg" alt="Brand 2" class="brand-img">
+            <p class="brand-name">D&G</p>
+        </div>
+        <div class="brand">
+            <img src="Img/Brand/RODENSTOCK.jpg" alt="Brand 4" class="brand-img">
+            <p class="brand-name">Rodentock</p>
+        </div>
     </div>
-</header>
-
-<script>
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-        document.querySelector('.menu').classList.toggle('active');
-    });
-</script>
+</div>
 
 </body>
 </html>

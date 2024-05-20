@@ -4,148 +4,166 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ottica Traguardo</title>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
-<link rel="icon" href="LOGO.ico" type="image/x-icon">
+<link rel="icon" href="LOGO-removebg.ico" type="image/x-icon">
 <link rel="shortcut icon" href="LOGO.ico" type="image/x-icon">
 <link rel="stylesheet" href="style.css">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/fc8e9d8239.js" crossorigin="anonymous"></script>
 
 </head>
 
 
-
 <body>
 
-<header>
-    <div class="container">
+    <!-- Header -->
+    <header>
+        <div class="container">
 
+            <div class="logo">
+                <img src="LOGO-removebg-preview.png" alt="Logo">
+                <div class="TitoloPagina">OTTICA TRAGUARDO Shop</div>
+            </div>
+
+            <button class="toggle-menu">Apri/Chiudi Menu</button>
+
+            <nav class="menu" id="sidebar">
+
+                <ul class="menu-list">
+                    <li><a href="Index.html">Home</a></li>
+                    <li>
+                        <a href="#">Products</a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="#">Eyeglasses</a></li>
+                                <li><a href="#">Sunglasses</a></li>
+                                <li><a href="#">Contact Lenses</a></li>
+                                <li><a href="#">Reading Glasses</a></li>
+                                <li><a href="#">Sports Glasses</a></li>
+                                <li><a href="#">Specialty Glasses</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                    <a href="src/Login.html"><li id="PulsanteLogin" class="fa-solid fa-glasses"></li></a>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+
+    <div class="Content">
+
+        <!-- CAROUSEL -->
+        <div class="slider-container">
+            <div class="carousel">
+                <div class="slide">
+                    <img src="src/Img/Negozio-Generale/UltimiArrivi.jpg" alt="Ultimi Arrivi">
+                    <div class="text" style="cursor: default;" >Ultimi Arrivi</div>
+                </div>
+                <div class="slide">
+                    <img src="src/Img/Negozio-Generale/Novità.jpg" alt="Novità">
+                    <div class="text" style="cursor: default;">Novità</div>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    
+
+        <div class="containerBody">
+
+            <!-- Aggiunta della sezione "Nuovi Brand" -->
+
+            <div class="section-title">NUOVI BRAND</div>
+            <div class="linea"></div>
+            <div class="brand-section">
+                <div class="brand">
+                    <img src="src/Img/Brand/Gucci.jpg" alt="Brand 1" class="brand-img">
+                    <p class="brand-name">GUCCI</p>
+                    <p class="VisualizzaOcchiali">Visualizza Collezione <i class="fa-solid fa-binoculars"></i></p>
+                </div>
+                <div class="brand">
+                    <img src="src/Img/Brand/D&G.jpg" alt="Brand 2" class="brand-img">
+                    <p class="brand-name">D&G</p>
+                    <p class="VisualizzaOcchiali">Visualizza Collezione <i class="fa-solid fa-binoculars"></i></p>
+                </div>
+                <div class="brand">
+                    <img src="src/Img/Brand/RODENSTOCK.jpg" alt="Brand 4" class="brand-img">
+                    <p class="brand-name">RODENTOCK</p>
+                    <p class="VisualizzaOcchiali">Visualizza Collezione <i class="fa-solid fa-binoculars"></i></p>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER - Con mappa e form di contatti -->
+    <footer>
         
+        <div class="container" style="padding-bottom: 20px;">
+            
+            <div class="contact-info" style="height: 100%;">
+                <div class="Logo-FormContatti">
+                    <img src="LOGO-removebg-preview.png" class="Img-FormContatti" >
+                </div>
 
-        <div class="logo">
-            <img src="LOGO.png" alt="Logo">
-            <div class="TitoloPagina">OTTICA TRAGUARDO Shop</div>
-        </div>
-
-        <!-- Pulsante per aprire il menu a tendina -->
-        <div class="navbar"><span class="icon-bar"></span></div>
-
-        <nav class="menu" id="sidebar">
-
-            <ul class="menu-list">
-                <li><a href="Index.html">Home</a></li>
-                <li>
-                    <a href="#">Products</a>
-                    <div class="submenu">
-                        <ul>
-                            <li><a href="#">Eyeglasses</a></li>
-                            <li><a href="#">Sunglasses</a></li>
-                            <li><a href="#">Contact Lenses</a></li>
-                            <li><a href="#">Reading Glasses</a></li>
-                            <li><a href="#">Sports Glasses</a></li>
-                            <li><a href="#">Specialty Glasses</a></li>
-                        </ul>
+                <h2>Restiamo in contatto</h2>
+                <p>Iscriviti alla nostra newsletter per ricevere offerte e novità!</p>
+                
+                <div class="FormNewsletter">
+                    <input class="InputNewsletter" placeholder="tua-email@esempio.com">
+                    <!--<button class="fas fa-arrow-right-curved"></button> -->
+                    <i class="fa-solid fa-arrow-right-long" id="ArrowNewsletter" style="float: right; font-size: 13pt;"></i>
+                </div>
+                <hr>
+                <br>
+                <div class="CheckBoxInput">
+                    <input type="checkbox" class="DivCheckBox">
+                    
+                    <div style="float: left;">
+                        <p>Cliccando su “Invia” accetti le condizioni del nostro servizio.</p><br>
+                        <p>Tratteremo i tuoi dati come descritto nella nostra</p> 
                     </div>
-                </li>
-                <li><a href="#">Contact</a></li>
-                <a href="Login.html"><li id="PulsanteLogin" class="fa-solid fa-glasses"></li></a>
-            </ul>
-        </nav>
-    </div>
-
-    
-</header>
-
-<div class="Content">
-    <div class="slider-container">
-        <div class="carousel">
-            <div class="slide">
-                <img src="UltimiArrivi.jpg" alt="Ultimi Arrivi">
-                <div class="text" style="cursor: default;" >Ultimi Arrivi</div>
+                    
+                </div>
+                
             </div>
-            <div class="slide">
-                <img src="Novità.jpg" alt="Novità">
-                <div class="text" style="cursor: default;">Novità</div>
-            </div>
-        </div>
-        <div class="controls">
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-    </div>
-    
-    <div class="containerBody">
 
-<!-- Aggiunta della sezione "Nuovi Brand" -->
-<div class="section-title" style="font-weight: bolder; font-size: 28pt; text-align: center; margin-top: 40px;">Nuovi Brand</div>
-<div class="brand-section">
-    <div class="brand">
-        <img src="Img/Gucci.jpg" alt="Brand 1" class="brand-img">
-        <p class="brand-name">Gucci</p>
-    </div>
-    <div class="brand">
-        <img src="Img/D&G.jpg" alt="Brand 2" class="brand-img">
-        <p class="brand-name">D&G</p>
-    </div>
-    <div class="brand">
-        <img src="Img/RODENSTOCK.jpg" alt="Brand 4" class="brand-img">
-        <p class="brand-name">Rodentock</p>
-    </div>
-</div>
-
-
-
-
-        <a href="Login.html" class="login-button">Login</a>
-
-        <div class="section-title">Contatti</div>
-        <div class="contact-section">
-            <p>Indirizzo: Via dei Mille, 123 - 20100 Milano</p>
-            <p>Email: info@myglassesshop.com</p>
-            <p>Telefono: +39 02 1234567</p>
-        </div>
-
-    </div>
-
-</div>
-
-<footer>
-    <div class="container" style="padding-bottom: 20px;">
-        <div class="contact-info" style="height: 100%;">
-            <h3>Contatti</h3>
-            <p>Indirizzo: Piazza XX Settembre, 18 - 10242 Bra(CN)</p>
-            <p>Email: info@OtticaTraguardo.com</p>
-            <p>Telefono: +39 0172 202882</p>
-            <a href="mailto:info@OtticaTraguardo.com" class="contact-button">Contattaci</a>
-        </div>
-            <div class="map">
+            <div class="map" >
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.177019363282!2d9.190057315789074!3d45.46628857910022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c7ee0cc24ef3%3A0x8e9dd450f3768ec3!2sPiazza%20del%20Duomo%2C%20Milano%20MI%2C%20Italy!5e0!3m2!1sen!2s!4v1642102561214!5m2!1sen!2s" width="100%" height="300" style="border:0; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);" allowfullscreen="" loading="lazy"></iframe>
             </div>
-    </div>
-    <div class="copyright">
-        <div class="container">
-            <p>&copy; 2024 Ottica Traguardo. Tutti i diritti riservati.</p>
         </div>
-    </div>
-</footer>
+
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; 2024 Ottica Traguardo. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
 
 <script>
 
     $(document).ready(function() {
 
-$('.navbar').click(function(){
-    $('.menu').toggleClass('wide');
-});
+        document.querySelector('.toggle-menu').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('menu-open');
+        });
 
-
+        
         window.addEventListener('resize', resizeBrands);
-
-
-
-// Chiamata alla funzione all'avvio per impostare l'altezza iniziale
-resizeBrands();
+        // Chiamata alla funzione all'avvio per impostare l'altezza iniziale delle card Brand (sotto carousel)
+        resizeBrands();
 
 
         // Funzione per avviare il carousel
@@ -179,9 +197,9 @@ resizeBrands();
         });
 
         function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
-    }
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
         
 
         showSlide(currentIndex);
@@ -190,7 +208,7 @@ resizeBrands();
 
         // Aggiungi un evento di scorrimento per l'header
         $(window).scroll(function() {
-            if ($(this).scrollTop() > 1) {
+            if ($(this).scrollTop() > 80) {
                     $('header').css('background-color', 'rgba(99, 126, 151, 0.95)');
             
             } else {
@@ -199,42 +217,27 @@ resizeBrands();
         });
 
         // Aggiungi un evento di hover per l'header
-    $('header').hover(function() {
-        // Quando il mouse entra nell'header
-        $(this).css('background-color', 'rgba(99, 126, 151, 1)');
-    }, function() {
-        // Quando il mouse esce dall'header
-        if ($(window).scrollTop() > 1) {
-            $(this).css('background-color', 'rgba(99, 126, 151, 0.95)');
-        }
-    });
-
+        $('header').hover(function() {
+            // Quando il mouse entra nell'header
+            $(this).css('background-color', 'rgba(99, 126, 151, 1)');
+        }   , function() {
+            // Quando il mouse esce dall'header
+                if ($(window).scrollTop() > 1) {
+                    $(this).css('background-color', 'rgba(99, 126, 151, 0.95)');
+                }
+            });
     
-
-    });
+     });
 
 
     // Funzione per impostare l'altezza degli elementi .brand in modo che siano quadrati
     function resizeBrands() {
-    var brands = document.querySelectorAll('.brand');
-    brands.forEach(function(brand) {
-        var width = brand.offsetWidth;
-        brand.style.height = width + 'px';
-    });
-
-    // Gestione del toggle per il menu mobile
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const menuList = document.querySelector('.menu-list');
-
-        // Aggiungi un evento di click al pulsante del menu
-        menuToggle.addEventListener('click', function() {
-            menuList.classList.toggle('active');
+        var brands = document.querySelectorAll('.brand');
+        brands.forEach(function(brand) {
+            var width = brand.offsetWidth;
+            brand.style.height = width + 'px';
         });
-    });
-
-}
-
+    }
 
 
 </script>  
