@@ -3,59 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualizza Collezione con Transizione</title>
+    <title>Menu Responsive</title>
     <style>
-        .containerBody {
-            position: relative;
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
 
-        .brand-img {
-            width: 200px;
-            height: auto;
-            transition: filter 0.5s;
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
-        .brand-name {
-            position: absolute;
-            bottom: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
+        .navbar .logo {
             color: white;
+            font-size: 1.5em;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin: 0 10px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
             padding: 10px;
-            opacity: 0;
-            transition: opacity 0.5s, bottom 0.5s;
         }
 
-        .brand:hover .brand-name {
-            opacity: 1;
-            bottom: 10px;
+        .menu-toggle span {
+            height: 3px;
+            width: 25px;
+            background: white;
+            margin: 4px 0;
         }
 
-        .brand:hover .brand-img {
-            filter: brightness(0.8); /* Opacizza leggermente l'immagine al passaggio del mouse */
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #333;
+                justify-content: center;
+                align-items: center;
+                transition: transform 0.3s ease;
+                transform: translateX(-100%);
+            }
+
+            .navbar ul.show {
+                display: flex;
+                transform: translateX(0);
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .navbar ul li {
+                margin: 20px 0;
+            }
+
+            .close-btn {
+                
+            display: block;
+            }
+        }
+
+        .close-btn {
+            display: none;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                font-size: 2em;
+                color: white;
+                cursor: pointer;
+        }
+
+        .navbar ul.show + .close-btn {
+            display: block;
         }
     </style>
 </head>
 <body>
 
-<div class="containerBody">
-    <div class="section-title" style="font-weight: bolder; font-size: 23pt; text-align: center; margin-top: 40px;">Nuovi Brand</div>
-    <div class="brand-section">
-        <div class="brand">
-            <img src="Img/Brand/Gucci.jpg" alt="Brand 1" class="brand-img">
-            <p class="brand-name">Gucci</p>
-        </div>
-        <div class="brand">
-            <img src="Img/Brand/D&G.jpg" alt="Brand 2" class="brand-img">
-            <p class="brand-name">D&G</p>
-        </div>
-        <div class="brand">
-            <img src="Img/Brand/RODENSTOCK.jpg" alt="Brand 4" class="brand-img">
-            <p class="brand-name">Rodentock</p>
-        </div>
+<div class="navbar">
+    <div class="logo">Logo</div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
+    <div class="close-btn">&times;</div>
 </div>
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const closeBtn = document.querySelector('.close-btn');
+    const menu = document.querySelector('.navbar ul');
+
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('show');
+        closeBtn.classList.toggle('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        menu.classList.remove('show');
+        closeBtn.classList.remove('show');
+    });
+</script>
 
 </body>
 </html>

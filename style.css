@@ -63,6 +63,7 @@
     .menu ul li a {
         color: #fff;
         text-decoration: none;
+        padding: 1px;
         font-size: 20px;
         position: relative;
     }
@@ -72,7 +73,7 @@
         position: absolute;
         width: 100%;
         height: 2px;
-        bottom: 0;
+        bottom: -2px;
         left: 0;
         background-color: #fff;
         visibility: hidden;
@@ -113,6 +114,7 @@
         width: 300px;
         left: 0;
         top: 100%;
+        margin-top: 5px;
         animation: fadeIn 0.5s ease-out;
     }
 
@@ -409,15 +411,7 @@
         transform: translateY(-5px);
     }
 
-    .menu-toggle{
-    display: none;
-    }
 
-
-
-    .toggle-menu{
-        display:  none;
-    }
 
     #PulsanteLogin{
         width: auto;
@@ -493,6 +487,7 @@
             padding: 10px;
             opacity: 0;
             transition: opacity 0.5s, bottom 0.5s;
+            text-align: center;
     }
 
     .brand:hover .VisualizzaOcchiali {
@@ -503,6 +498,12 @@
     .brand:hover .brand-img {
         filter: brightness(0.8); /* Opacizza leggermente l'immagine al passaggio del mouse */
     }
+
+    #Toggle-ApriMenu{
+        display: none;
+    }
+
+    
 
         @media screen and (max-width: 940px) {
 
@@ -558,11 +559,11 @@
             }
     
             .brand-name{
-                font-size: 0.875em;
+                font-size: 1em;
             }
 
             .section-title{
-                font-size: 0.875em;
+                font-size: 1.5em;
             }
 
 
@@ -629,50 +630,57 @@
                 background-color: #ccc;
             }
 
-            .menu {
-                
-                display: none;
-
-                font-size: 0.875em;
-
-                width: 90%;
-    
-                height: 100% !important; /* Imposta la larghezza del menu */
+            #Toggle-ApriMenu{
+                display: block;
             }
 
+
+
             .menu ul {
-                list-style-type: none; /* Rimuove i punti elenco */
-                padding: 0; /* Rimuove lo spazio interno */
-                margin: 0; /* Rimuove lo spazio esterno */
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
                 width: 100%;
-    
+                height: 100%;
+                background-color: #333;
+                justify-content: center;
+                align-items: center;
+                transition: transform 0.3s ease;
+                transform: translateX(-100%);
+            }
+
+            .menu ul.show {
+                display: block;
+                transform: translateX(0);
+            }
+
+            .menu ul li {
+                margin: 20px 0;
+            }
+
+            .menu-list{
+                vertical-align: middle;
             }
     
             .menu li {
                 border-bottom: 1px solid #ccc; /* Aggiunge una linea divisoria tra gli elementi */
+                padding: 30px;
                 width: 100%;
+                font-size: 0.875em;
             }
-
 
             .menu a {
                 display: block; /* Trasforma gli elementi in blocchi per occupare tutto lo spazio disponibile */
                 padding: 10px; /* Aggiunge spazio intorno al testo */
                 text-decoration: none; /* Rimuove la sottolineatura */
-            }
-  
-
-            .menu li:last-child {
-                border-bottom: none; /* Rimuove la linea divisoria per l'ultimo elemento */
+                font-size: 0.875em;
             }
 
             .navbar {
                 display: none;
             }   
-
-
-            .menu menu-active{
-                width: 100%;
-            }
 
         }
 

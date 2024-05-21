@@ -30,7 +30,7 @@
                 <div class="TitoloPagina">OTTICA TRAGUARDO Shop</div>
             </div>
 
-            <button class="toggle-menu">Apri/Chiudi Menu</button>
+            <div class="menu-toggle"><i class="fa-solid fa-bars" id="Toggle-ApriMenu" style="font-size: larger;"></i></div>
 
             <nav class="menu" id="sidebar">
 
@@ -156,9 +156,6 @@
 
     $(document).ready(function() {
 
-        document.querySelector('.toggle-menu').addEventListener('click', function() {
-            document.querySelector('.menu').classList.toggle('menu-open');
-        });
 
         
         window.addEventListener('resize', resizeBrands);
@@ -238,6 +235,15 @@
             brand.style.height = width + 'px';
         });
     }
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu ul');
+
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('show');
+        closeBtn.classList.toggle('show');
+    });
+
 
 
 </script>  
