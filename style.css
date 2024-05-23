@@ -503,6 +503,10 @@
         display: none;
     }
 
+    #closeBtn{
+        display: none;
+    }
+
     
 
         @media screen and (max-width: 940px) {
@@ -676,6 +680,18 @@
                 padding: 10px; /* Aggiunge spazio intorno al testo */
                 text-decoration: none; /* Rimuove la sottolineatura */
                 font-size: 0.875em;
+            }
+
+            #closeBtn{
+                display:none;
+                width: 90%;
+                font-size: 20pt;
+                padding: 10px;
+                text-align: right;
+            }    
+
+            #closeBtn.show {
+                display:block;
             }
 
             .navbar {

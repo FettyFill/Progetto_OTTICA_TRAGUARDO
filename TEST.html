@@ -33,8 +33,9 @@
             <div class="menu-toggle"><i class="fa-solid fa-bars" id="Toggle-ApriMenu" style="font-size: larger;"></i></div>
 
             <nav class="menu" id="sidebar">
-
+                
                 <ul class="menu-list">
+                    <i class="fa-solid fa-xmark" id="closeBtn"></i>
                     <li><a href="Index.html">Home</a></li>
                     <li>
                         <a href="#">Products</a>
@@ -238,12 +239,17 @@
 
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu ul');
+    const closeBtn = document.getElementById('closeBtn')
 
     menuToggle.addEventListener('click', () => {
         menu.classList.toggle('show');
         closeBtn.classList.toggle('show');
     });
 
+    closeBtn.addEventListener('click', () => {
+            menu.classList.remove('show');
+            closeBtn.classList.remove('show');
+        });
 
 
 </script>  
